@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Home1\**" />
+    <Compile Remove="Views\Login1\**" />
+    <Compile Remove="Views\Shared1\**" />
+    <Content Remove="Views\Home1\**" />
+    <Content Remove="Views\Login1\**" />
+    <Content Remove="Views\Shared1\**" />
+    <EmbeddedResource Remove="Views\Home1\**" />
+    <EmbeddedResource Remove="Views\Login1\**" />
+    <EmbeddedResource Remove="Views\Shared1\**" />
+    <None Remove="Views\Home1\**" />
+    <None Remove="Views\Login1\**" />
+    <None Remove="Views\Shared1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="6.10.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Basice.Utility\Basice.Utility.csproj" />
+    <ProjectReference Include="..\Basics.Application\Basics.Application.csproj" />
+    <ProjectReference Include="..\Basics.Domain\Basics.Domain.csproj" />
+    <ProjectReference Include="..\Basics.EntityFrameworkCore\Basics.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Connected Services\" />
+  </ItemGroup>
+
+</Project>
