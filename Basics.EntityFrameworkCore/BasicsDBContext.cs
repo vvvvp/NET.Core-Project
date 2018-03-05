@@ -14,6 +14,7 @@ namespace Basics.EntityFrameworkCore
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<RoleMenu> RoleMenus { get; set; }
 
+        
         protected override void OnModelCreating(ModelBuilder builder)
         {
             //UserRole关联配置

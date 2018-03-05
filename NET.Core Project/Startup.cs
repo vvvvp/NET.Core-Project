@@ -69,7 +69,7 @@ namespace NET.Core_Project
             services.AddScoped<IRoleAppService, RoleAppService>();
             #endregion
 
-            //MVC
+            //MVC 注册
             services.AddMvc();
             //Session服务
             services.AddSession();

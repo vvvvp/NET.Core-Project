@@ -39,6 +39,8 @@ namespace Basics.MVC.Controllers
                     //记录Session
                     HttpContext.Session.SetString("CurrentUserId", user.Id.ToString());
                     HttpContext.Session.Set("CurrentUser", ByteConvertHelper.Object2Bytes(user));
+                    //记录登录状态到redis
+
                     //跳转到系统首页
                     return RedirectToAction("Index", "Home");
                 }
