@@ -39,7 +39,7 @@ namespace NET.Core_Project
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // 运行时调用此方法。使用此方法向容器添加服务
         public void ConfigureServices(IServiceCollection services)
         {
             //获取数据库连接字符串
@@ -69,7 +69,15 @@ namespace NET.Core_Project
             services.AddScoped<IRoleAppService, RoleAppService>();
             #endregion
 
-            //MVC 注册
+////总是创建一个新的服务实例
+//services.AddTransient<IUserRepository, UserRepository>();
+////(同一次请求）,我理解为会话
+//services.AddScoped<IUserRepository, UserRepository>();
+////始终是同一个实例对象
+//services.AddSingleton<IUserRepository, UserRepository>();
+
+
+            //MVC 注册 添加MVC服务
             services.AddMvc();
             //Session服务
             services.AddSession();
@@ -77,7 +85,7 @@ namespace NET.Core_Project
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         /// <summary>
-        /// 添加MVC服务及Http请求管道处理
+        /// Http请求管道处理
         /// </summary>
         /// <param name="app"></param>
         /// <param name="env"></param>
@@ -85,6 +93,7 @@ namespace NET.Core_Project
         {
             loggerFactory.AddConsole();
 
+            //错误处理机制
             if (env.IsDevelopment())
             {
                 //开发环境异常处理

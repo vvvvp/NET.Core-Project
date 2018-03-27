@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Basice.Utility.Cache
 {
-    public class RedisHelper
+    public class RedisHelper1
     {
         
     }
