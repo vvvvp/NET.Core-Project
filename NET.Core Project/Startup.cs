@@ -47,11 +47,11 @@ namespace NET.Core_Project
             #region Mysql连接
             //借鉴https://www.cnblogs.com/wangjieguang/p/EFCore-MySQL.html
             //添加数据上下文
-            services.AddDbContext<BasicsDBContext>(options => options.UseMySQL(sqlConnectionString));
+            //services.AddDbContext<BasicsDBContext>(options => options.UseMySQL(sqlConnectionString));
             #endregion
 
             #region SqlServer连接
-            //services.AddDbContext<BasicsDBContext>(options => options.UseSqlServer(sqlConnectionString));
+            services.AddDbContext<BasicsDBContext>(options => options.UseSqlServer(sqlConnectionString));
             #endregion
 
             #region 依赖注入

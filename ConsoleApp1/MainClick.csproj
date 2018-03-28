@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Basice.Utility\Basice.Utility.csproj" />
+  </ItemGroup>
+
 </Project>
